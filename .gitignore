@@ -29,6 +29,9 @@ target/
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
+### Quarkus ###
+.quarkus
+
 # Eclipse m2e generated files
 # Eclipse Core
 .project
