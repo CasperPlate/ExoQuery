@@ -1,17 +1,20 @@
 package nl.casper.plate.entity.model;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "stellar_data")
 @Builder
 @Data
-public class StellarData {
+@NoArgsConstructor
+@AllArgsConstructor
+public class StellarData extends PanacheEntityBase {
 
     @Id
     @Column(name = "fk_exoplanet_id")
@@ -33,17 +36,6 @@ public class StellarData {
     @Column(name = "st_teff_reflink")
     public String effectiveTemperatureReference;
 
-    @Column(name = "st_rad")
-    public double radius;
-    @Column(name = "st_raderr1")
-    public double radiusErr1;
-    @Column(name = "st_raderr2")
-    public double radiusErr2;
-    @Column(name = "st_radlim")
-    public double radiusLim;
-    @Column(name = "st_rad_reflink")
-    public String radiusReference;
-
     @Column(name = "st_mass")
     public double mass;
     @Column(name = "st_masserr1")
@@ -54,6 +46,17 @@ public class StellarData {
     public double massLim;
     @Column(name = "st_mass_reflink")
     public String massReference;
+
+    @Column(name = "st_rad")
+    public double radius;
+    @Column(name = "st_raderr1")
+    public double radiusErr1;
+    @Column(name = "st_raderr2")
+    public double radiusErr2;
+    @Column(name = "st_radlim")
+    public double radiusLim;
+    @Column(name = "st_rad_reflink")
+    public String radiusReference;
 
     @Column(name = "st_met")
     public double metallicity;

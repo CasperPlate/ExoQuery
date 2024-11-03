@@ -1,17 +1,20 @@
 package nl.casper.plate.entity.model;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "system_data")
 @Builder
 @Data
-public class SystemData {
+@NoArgsConstructor
+@AllArgsConstructor
+public class SystemData extends PanacheEntityBase {
 
     @Id
     @Column(name = "fk_exoplanet_id")

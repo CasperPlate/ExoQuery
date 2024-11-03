@@ -1,18 +1,20 @@
 package nl.casper.plate.entity.model;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "detections")
 @Builder
 @Data
-public class Detections extends PanacheEntity {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Detections extends PanacheEntityBase {
 
     @Id
     @Column(name = "fk_exoplanet_id")
@@ -36,5 +38,5 @@ public class Detections extends PanacheEntity {
     @Column(name = "ima_flag")
     public boolean imaging;
     @Column(name = "dkin_flag")
-    public boolean diskKinemetics;
+    public boolean diskKinematics;
 }

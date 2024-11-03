@@ -4,9 +4,9 @@ import lombok.*;
 
 import java.util.Date;
 
-@Builder
-@Value
-class PSCompParsDTO {
+@Data
+@NoArgsConstructor
+public class PSCompParsDTO {
 
     // exoplanet
     String pl_name;
@@ -91,7 +91,6 @@ class PSCompParsDTO {
     double pl_orbeccenerr1;
     double pl_orbeccenerr2;
     double pl_orbeccenlim;
-    String pl_orbeccen_reflink;
     double pl_insol;
     double pl_insolerr1;
     double pl_insolerr2;
@@ -106,7 +105,6 @@ class PSCompParsDTO {
     double pl_orbinclerr1;
     double pl_orbinclerr2;
     double pl_orbincllim;
-    String pl_orbincl_reflink;
     double pl_tranmid;
     double pl_tranmiderr1;
     double pl_tranmiderr2;
@@ -142,17 +140,16 @@ class PSCompParsDTO {
     double pl_occdeperr1;
     double pl_occdeperr2;
     double pl_occdeplim;
-    double pl_occdep_reflink;
+    String pl_occdep_reflink;
     double pl_orbtper;
     double pl_orbtpererr1;
     double pl_orbtpererr2;
     double pl_orbtperlim;
     String pl_orbtper_reflink;
-    double pl_orblpererr1;
     double pl_orblper;
+    double pl_orblpererr1;
     double pl_orblpererr2;
     double pl_orblperlim;
-    String pl_orblper_reflink;
     double pl_rvamp;
     double pl_rvamperr1;
     double pl_rvamperr2;
@@ -182,16 +179,16 @@ class PSCompParsDTO {
     double st_masserr2;
     double st_masslim;
     String st_mass_reflink;
-    double st_met;
-    double st_meterr1;
-    double st_meterr2;
-    double st_metlim;
-    String st_met_reflink;
     double st_rad;
     double st_raderr1;
     double st_raderr2;
     double st_radlim;
     String st_rad_reflink;
+    double st_met;
+    double st_meterr1;
+    double st_meterr2;
+    double st_metlim;
+    String st_met_reflink;
     String st_metratio;
     double st_lum;
     double st_lumerr1;

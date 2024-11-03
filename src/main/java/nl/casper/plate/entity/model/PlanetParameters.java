@@ -1,17 +1,20 @@
 package nl.casper.plate.entity.model;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "planet_parameters")
 @Builder
 @Data
-public class PlanetParameters {
+@NoArgsConstructor
+@AllArgsConstructor
+public class PlanetParameters extends PanacheEntityBase {
 
     @Id
     @Column(name = "fk_exoplanet_id")
@@ -81,7 +84,7 @@ public class PlanetParameters {
     @Column(name = "pl_bmasselim")
     public double planetMassEarthLimit;
     @Column(name = "pl_bmasse_reflink")
-    public String planeMassEarthReference;
+    public String planetMassEarthReference;
 
     @Column(name = "pl_bmassj")
     public double planetMassJupiter;
@@ -118,7 +121,7 @@ public class PlanetParameters {
     @Column(name = "pl_insol")
     public double insolationFlux;
     @Column(name = "pl_insolerr1")
-    public double insolationFluxrErr1;
+    public double insolationFluxErr1;
     @Column(name = "pl_insolerr2")
     public double insolationFluxErr2;
     @Column(name = "pl_insollim")
@@ -145,8 +148,6 @@ public class PlanetParameters {
     public double inclinationErr2;
     @Column(name = "pl_orbincllim")
     public double inclinationLimit;
-    @Column(name = "pl_orbincl_reflink")
-    public String inclinationReference;
 
     @Column(name = "pl_tranmid")
     public double timeOfConjunction;
@@ -247,8 +248,6 @@ public class PlanetParameters {
     public double argumentOfPeriastronErr2;
     @Column(name = "pl_orblperlim")
     public double argumentOfPeriastronLimit;
-    @Column(name = "pl_orblper_reflink")
-    public String argumentOfPeriastronReference;
 
     @Column(name = "pl_rvamp")
     public double radialVelocity;
